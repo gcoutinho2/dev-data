@@ -1,0 +1,32 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <h2 class="title is-2">Contato</h2>
+
+  <div class="field">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="contact.id">
+  </div>
+  
+  <div class="field">
+    <div class="control">
+      <input class="input" name="name" #name="ngModel" [(ngModel)]="contact.name" type="text" placeholder="Nome"
+        required>
+      <div *ngIf="name.invalid && name.touched">
+        Campo obrigatório
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <input class="input" name="phone" #phone="ngModel" [(ngModel)]="contact.phone" type="text" placeholder="Telefone"
+        required>
+      <div *ngIf="phone.invalid && phone.touched">
+        Campo obrigatório
+      </div>
+    </div>
+  </div>
+
+
+  <div class="control">
+    <button type="submit" [disabled]="form.invalid" class="button is-primary is-rounded is-fullwidth">Salvar</button>
+  </div>
+</form>

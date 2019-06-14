@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="section">
+    <app-contact-form [contact]="contact" (saveContact)="saveContact($event)"></app-contact-form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <app-contact-list [contacts]="contacts" (editContact)="edit($event)" (deleteContact)="delete($event)" ></app-contact-list>
+  </div>
+</div>

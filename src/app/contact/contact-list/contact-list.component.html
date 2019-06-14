@@ -1,0 +1,28 @@
+<table class="table is-fullwidth is-hoverable">
+  <thead>
+    <tr class="is-primary">
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td>{{contact.id}}</td>
+      <td>{{contact.name}}</td>
+      <td>{{contact.phone}}</td>
+      <td>
+
+          <button class="button is-info" (click)="edit(contact)">
+            <i class="fas fa-info-circle"></i>
+          </button>
+          <button class="button is-danger" (click)="delete(contact)">
+            <i class="fas fa-ban"></i>
+          </button>
+    
+      </td>
+    </tr>
+  </tbody>
+</table>
