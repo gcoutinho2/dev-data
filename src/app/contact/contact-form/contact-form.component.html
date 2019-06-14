@@ -4,23 +4,28 @@
   <div class="field">
     <input type="hidden" name="id" #id="ngModel" [(ngModel)]="contact.id">
   </div>
-  
+
   <div class="field">
     <div class="control">
-      <input class="input" name="name" #name="ngModel" [(ngModel)]="contact.name" type="text" placeholder="Nome"
+      <input class="input" [ngClass]="{'is-danger': name.invalid && name.touched}" name="name" #name="ngModel" [(ngModel)]="contact.name" type="text" placeholder="Nome"
         required>
       <div *ngIf="name.invalid && name.touched">
-        Campo obrigatório
+        <p class="help is-danger">
+          Campo obrigatório
+        </p>
       </div>
     </div>
   </div>
 
   <div class="field">
     <div class="control">
-      <input class="input" name="phone" #phone="ngModel" [(ngModel)]="contact.phone" type="text" placeholder="Telefone"
+      <input class="input" [ngClass]="{'is-danger': phone.invalid && phone.touched}" name="phone" #phone="ngModel" [(ngModel)]="contact.phone" type="text" placeholder="Telefone"
         required>
       <div *ngIf="phone.invalid && phone.touched">
-        Campo obrigatório
+        <p class="help is-danger">
+          Campo obrigatório
+        </p>
+
       </div>
     </div>
   </div>
